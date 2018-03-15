@@ -1,1 +1,27 @@
 *.docx diff=word
+. filter=lfs diff=lfs merge=lfs -text
+./presentations/charts.docx filter=lfs diff=lfs merge=lfs -text
+./presentations/graphic.docx filter=lfs diff=lfs merge=lfs -text
+./R-参考/C-财务分析.ppt filter=lfs diff=lfs merge=lfs -text
+./R-参考/P-维特科技.pdf filter=lfs diff=lfs merge=lfs -text
+./templates/t1.pptx filter=lfs diff=lfs merge=lfs -text
+./documentations/15061084-冯聪-爱厨艺亲子主题餐饮.docx filter=lfs diff=lfs merge=lfs -text
+./R-参考/F-创业培训会.pdf filter=lfs diff=lfs merge=lfs -text
+./R-参考/W-维特科技.pptx filter=lfs diff=lfs merge=lfs -text
+./templates/M-慢性病跟踪监测系统.pptx filter=lfs diff=lfs merge=lfs -text
+./templates/t0.pptx filter=lfs diff=lfs merge=lfs -text
+./templates/t2.pptx filter=lfs diff=lfs merge=lfs -text
+./documentations/images filter=lfs diff=lfs merge=lfs -text
+./presentations/15061084-冯聪-爱厨艺亲子主题餐饮.pptx filter=lfs diff=lfs merge=lfs -text
+./presentations/images filter=lfs diff=lfs merge=lfs -text
+./presentations/t2.pptx filter=lfs diff=lfs merge=lfs -text
+./presentations/v1.pptx filter=lfs diff=lfs merge=lfs -text
+./R-参考/Y-优秀策划书 filter=lfs diff=lfs merge=lfs -text
+./R-参考/冯如杯论文 filter=lfs diff=lfs merge=lfs -text
+./documentations/formula filter=lfs diff=lfs merge=lfs -text
+./presentations/blue-long.pptx filter=lfs diff=lfs merge=lfs -text
+./references/.~╬м╠╪┐╞╝╝╔╠╥╡▓▀╗о╧ю─┐Helloween.pptx filter=lfs diff=lfs merge=lfs -text
+./references/W-维特科技.pptx filter=lfs diff=lfs merge=lfs -text
+./.~K-策划.pptx filter=lfs diff=lfs merge=lfs -text
+./documentations/.~061084-冯聪-爱厨艺亲子主题餐饮.docx filter=lfs diff=lfs merge=lfs -text
+./documentations/北京爱厨艺亲子餐饮PPT讲稿.docx filter=lfs diff=lfs merge=lfs -text
