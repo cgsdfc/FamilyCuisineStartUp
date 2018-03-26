@@ -1,0 +1,18 @@
+% This Pie Chart uses the ``pgf-pie'' package which is based on pgfplots
+% and **not** hosted on CTAN but mirrored on Github (cause Google Code shutdown).
+% Although people on StackExchage vote against using this package or even using
+% Pie Chart, we used it here to get close look and feel as with the one produced
+% by WYSIWYG WPS.
+
+% This package is the first one installed manually by me. I learnt the TDS (TeX Dir Struct)
+% from here and dropped .sty and pdf manual to the right places under $TEXMFHOME and run
+% texhash and I could use it like ``\usepackage{pgf-pie}'' and view its doc by ``texdoc pgf-pie''.
+
+\begin{tikzpicture}
+        % Legend means small colorful tags telling the identity of each colorred object
+        \pie[text = legend]{
+                30/广州熊猫餐厅,
+                40/北京麦幼优儿童主题餐厅,
+                30/上海芭迪熊儿童主题餐厅
+        }
+\end{tikzpicture}

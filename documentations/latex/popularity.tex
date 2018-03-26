@@ -1,0 +1,22 @@
+% This is a minimal histogram using ``pgfplots''.
+% There is still a huge space to tune it.
+
+\begin{tikzpicture}
+        \begin{axis}[
+                        % Make the bar wider
+                        bar width=20pt,
+                        % Give x symbolic names
+                        symbolic x coords={十二五时期, 2016, 2017},
+                        % Generate labels below axies
+                        xlabel={ 年份 },
+                        ylabel={ 人口 },
+                        xtick=data
+                ]
+                \addplot[ybar, fill=blue] coordinates {
+                        % For tiny datasets, list them as coordinates
+                        (十二五时期,1644)
+                        (2016,1786)
+                        (2017,1723)
+                };
+        \end{axis}
+\end{tikzpicture}
