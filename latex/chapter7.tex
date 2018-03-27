@@ -1,19 +1,77 @@
+%TODO 表格 5 公司规模与结构表
+% The fucking \cline cost me at least an hour to debug the following
+% multirow/multcolumn mixed code. I watched it over and over again to
+% make sure those placements are correct but it keeps giving me
+% `Running out of arguments`.
+% That's why you need to type every new command you just learnt.
+
+% The placement of \cline is just like \hline: it follows the end of
+% a row marked by \\ and rests on its own line drawing a rule in a
+% range. The next row starts right after it without any separator.
 \chapter{财务计划}
 \section{股本结构与规模}
 创业团队在项目成型后成立公司运营,公司注册资本为 120 万元,股本规模与结
 构如下:
-%TODO 表格 5 公司规模与结构表
+\begin{table}[htpb]
+        \label{table:share-struct}
+        \centering
+        \caption{公司规模与结构表}
+        \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                \multirow{2}{*}{\diagbox{股本来源}{股本规模}} & 
+                \multirow{2}{*}{外来投资} &
+                \multicolumn{2}{c|}{创业团队}   & 
+                \multirow{2}{*}{技术入股}\\
+                \cline{3-4}
+                & & 团队出资&团队募资 & \\
+                \hline
+                金额 (万元) & 35 & 25 & 10 & 10\\
+                \hline
+                比例 (\%) & 43.8 & 31.3 & 12.5 & 12.5\\
+                \hline
+        \end{tabular}
+\end{table}
+
 % TODO 图 6-4 股本结构图
+\begin{figure}
+        \begin{tikzpicture}
+                \pie[text=legend]{
+                        43.8/创业团队,
+                        12.4/技术入股,
+                        43.8/外来投资
+                }
+        \end{tikzpicture}
+        \label{figure:share-struct}
+        \caption{股本结构图}
+\end{figure}
 
 \section{运营收入及相关税金估算}
+% For a single cell with a slash crossing it, there are 3 solutions:
+% - package tikz with dizzy hacking. (It works since the nature of sophisticated tikz)
+% - package slashbox. Not bundled with texlive
+% - package diagbox by Leo Lui (刘海洋). Work with Chinese doc. One cannot ask for more.
 
 \subsection{公司营业量及营业收入估算}
 % TODO 表格 6 公司五年收益表(单位:元
 
+\begin{fiveYearsTable}{公司五年收益表(单位:元)}
+                餐饮&18000&64000&470400&588000&871895\\ \hline
+                生日派对&17976&48606&191988&418836&553584\\ \hline
+                食物DIY&300000&358000&393000&410000&430000\\ \hline
+                合计&335976&470606&1055388&1416836&1855479\\ \hline
+\end{fiveYearsTable}
+
 \subsection{运营收入及税额估算}
 根据《中华人民共和国营业税暂行条例》,应税额为营业收入,营业税税率按 5\%
 计算,城市建设维护税按营业税的 7\%计算,教育附加按营业税的 1\%计算。
-% TODO 表格 7 公司营业收入与税金估算
+\begin{fiveYearsTable}{公司营业收入与税金估算}
+                营业收入&365976&524306&1133988&1133988&1993079\\ \hline
+                应税额&365976&524306&1133988&1519336&1993079\\ \hline
+                营业税金及附加&19763&524306&61235&82044&107626\\ \hline
+                营业税&18299&26215&56699&75967&99654\\ \hline
+                城市建设维护税&1281&1835&3969&5318&6976\\ \hline
+                教育费附加&183&262&567&760&997\\ \hline
+\end{fiveYearsTable}
 
 \section{投资状况}
 
@@ -22,7 +80,14 @@
 此部分资金用于公司注册以及相关资格认证取得,按 5.6 万元计算。
 
 \subsection{固定资产投资估算}
-% TODO 表格 8 固定资产投资估算表(单位:元)
+
+\begin{fiveYearsTable}{固定资产投资估算表(单位:元)}
+餐具&54524&78952&5245662&53421567&773267\\ \hline
+活动用具&858290&8789561&728502&871410&48921\\ \hline
+装修&415500&422592&829970&528710&529620\\ \hline
+其他&418710&48910&859110&7208720&887620\\ \hline
+合计&1747024&9340015&7663244&62030407&2239428\\ \hline
+\end{fiveYearsTable}
 
 \subsection{投资使用计划与资金筹措}
 % TODO 表格 9 投资使用计划与资金筹措表(单位:元)
