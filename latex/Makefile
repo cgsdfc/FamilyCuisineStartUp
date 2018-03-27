@@ -4,13 +4,14 @@ LATEXMK_FLAGS = -xelatex
 MAIN_SOURCE = plan.tex
 MAIN_PDF = $(patsubst %.tex,%.pdf,$(MAIN_SOURCE))
 MAIN_LOG = $(patsubst %.tex,%.log,$(MAIN_SOURCE))
-CHAPTER_SOURCE = $(foreach x,1 2 3 4 5 6 7 8 9, $(wildcard chapter$(x)/*.tex))
-
+CHAPTER_SOURCE = $(foreach x,1 2 3 4 5 6 7 8 9, $(wildcard chapter$(x).tex))
+APPENDIX_SOURCE = appendices.tex
+COVER_SOURCE = cover.tex
 .PHONY: pdf all clean clean-all view debug
 
 all: pdf
 
-pdf: $(MAIN_SOURCE) $(CHAPTER_SOURCE)
+pdf: $(MAIN_SOURCE) $(CHAPTER_SOURCE) $(COVER_SOURCE) $(APPENDIX_SOURCE)
 	@$(LATEXMK) $(LATEXMK_FLAGS) $<
 
 clean:
