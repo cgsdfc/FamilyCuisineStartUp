@@ -1,30 +1,50 @@
+% CTeX Report Class
 \documentclass{ctexrep}
-\usepackage{varioref}
+
+% FIXME the following 2 packages have no reference
 \usepackage{caption}
 \usepackage{subcaption}
+
+% For \eqref mainly, see chapter8 for use of equations.
 \usepackage{amsmath}
+% For future loading tables from files. \pgfplotstableread
+% \pgfplotstabletypeset
+% \includegraphics
 \usepackage{pgfplotstable}
-\usepackage{adjustbox}
-\usepackage{makecell}
 \usepackage{graphicx}
+% The main ploting engine we use for nearly every chart.
 \usepackage{pgfplots}
+
+% capt-of is used in display of company-logo
+% and caption is the dependency of subcaption which
+% it doesn't load for some reasons
 \usepackage{capt-of}
+
+% Extended enumerate environment with optional marker specifier.
 \usepackage{enumerate}
+% Extended tabular environment.
 \usepackage{array}
+% Draw pie charts based on pgfplots
 \usepackage{pgf-pie}
+% Twine of multicolumn.
 \usepackage{multirow}
+% Draw special cell with a slash crossing it.
 \usepackage{diagbox}
 
+% Our customized table style specialized for 5 years.
 \input{five-years-table}
 \pgfplotsset{ compat=1.15 }
+
+% Enable the external feature of pgfplots.
 \usepgfplotslibrary{external}
 \tikzexternalize
 % Note the slash after dirname.
 % It is necessary.
 \tikzsetexternalprefix{external/}
-\includeonly{chapter8}
-\title{北京爱厨艺亲子主题餐厅}
 
+% For the sake of development only.
+\includeonly{chapter9}
+\title{北京爱厨艺亲子主题餐厅}
 
 \begin{document}
 \maketitle
