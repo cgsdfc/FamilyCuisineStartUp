@@ -1,5 +1,9 @@
 \documentclass{ctexrep}
 \usepackage{varioref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{pgfplotstable}
 \usepackage{adjustbox}
 \usepackage{makecell}
 \usepackage{graphicx}
@@ -10,13 +14,15 @@
 \usepackage{pgf-pie}
 \usepackage{multirow}
 \usepackage{diagbox}
+
 \input{five-years-table}
-\pgfplotsset{
-        compat=newest,
-        xlabel near ticks,
-        ylabel near ticks,
-}
-\includeonly{chapter7}
+\pgfplotsset{ compat=1.15 }
+\usepgfplotslibrary{external}
+\tikzexternalize
+% Note the slash after dirname.
+% It is necessary.
+\tikzsetexternalprefix{external/}
+\includeonly{chapter8}
 \title{北京爱厨艺亲子主题餐厅}
 
 

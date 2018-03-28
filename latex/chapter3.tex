@@ -3,8 +3,13 @@
 \section{亲子主题餐饮产业链分析}
 基于传统餐饮行业的产业链来看,上游行业是食品开发、生产和物流配送、厨师培
 训;由于亲子主题餐饮的特殊性,还涉及到幼教培训机构,装修公司,室内设计行业。
-终端消费者就是中等收入人群及其子女。其产业链条图如下:
-%% TODO图 2-1 产业链
+终端消费者就是中等收入人群及其子女。其产业链条如图~\ref{figure:inds-chain}所示。
+\begin{figure}
+        \centering
+        \caption{产业链}
+        \label{figure:inds-chain}
+        \includegraphics[ width=\textwidth ]{../images/company/inds-chain}
+\end{figure}
 
 \paragraph{食品生产}
 对餐饮业而言,食品安全是企业良性发展的基石。尤其是在各种食品安全事件已成
@@ -120,18 +125,23 @@
         \includegraphics[width=0.6\textwidth]{../images/competitors/北京麦幼优儿童主题餐厅}
 \end{figure}
 
+% Note the percetage %, without them 2 subfigures will be vertically placed.
+% Using %, the newline is suppressed.
+% The effect is not as good. Uses subcaption and caption packages.
 \begin{figure}[htbp]
-        \caption{上海芭迪熊儿童主题餐厅}
-        \centering
-        \includegraphics[width=0.6\textwidth]{../images/competitors/上海芭迪熊儿童主题餐厅}
-\end{figure}
-
-\begin{figure}[htbp]
-        \caption{广州熊猫餐厅}
-        \centering
-        % How to scale image to the same width as text block
-        % https://tex.stackexchange.com/questions/39147/scale-image-to-page-width
-        \includegraphics[width=0.6\textwidth]{../images/competitors/广州熊猫餐厅}
+        \begin{subfigure}[b]{0.5\textwidth}
+                \caption{上海芭迪熊儿童主题餐厅}
+                \centering
+                \includegraphics[width=0.6\textwidth]{../images/competitors/上海芭迪熊儿童主题餐厅}
+        \end{subfigure}%
+%
+        \begin{subfigure}[b]{0.5\textwidth}
+                \caption{广州熊猫餐厅}
+                \centering
+                % How to scale image to the same width as text block
+                % https://tex.stackexchange.com/questions/39147/scale-image-to-page-width
+                \includegraphics[width=0.6\textwidth]{../images/competitors/广州熊猫餐厅}
+        \end{subfigure}%
 \end{figure}
 
 \paragraph{北京麦幼优儿童主题餐厅}

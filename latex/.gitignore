@@ -37,3 +37,7 @@
 # produced by latexmk
 *.xdv
 *.fls
+
+# produced by pgfplots/external
+external/
+*.auxlock

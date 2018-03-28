@@ -1,0 +1,41 @@
+% FIXME: 
+% The table and plots below share the same set of data.
+% Figure out a way to place the data in one file and uses
+% it (references it) in both the table and plots.
+% Currently I simply group them into one dedicated file.
+% Consider package pgfplotstable.
+
+\begin{table}[htbp]
+        \caption{敏感性分析图表}
+        \label{table:sensity-analysis}
+        \begin{tabular}{|>{\centering}m{3cm}|c|c|c|c|c|}
+                \hline
+                % FIXME: The diagbox breaks the slash!
+                \multirow{2}{*}{\diagbox[innerwidth=3cm]{NPV}{变化量}} &
+                \multicolumn{5}{c|}{变化量(收益增加量、成本减少量)} \\
+                \cline{2-6}
+                & -10\% & -5\% & 0\% & 5\% & 10\% \\
+                \hline
+                成本变化下的税前NPV&1036505&1146945&1257385&1367825&1478265\\ \hline
+                收益变化下的税前NPV&889082&1073233&1257385&1441537&1625688\\ \hline
+        \end{tabular}
+\end{table}%
+%
+\begin{figure}[htbp]
+        \newcommand\percent{\%}
+        \centering
+        \label{figure:sensity-analysis}
+        \begin{tikzpicture}[baseline]
+                \begin{axis}[
+                                xlabel=变化量(\percent),
+                                ylabel=NPV,
+                                scaled ticks=false,
+                                axis lines=left,
+                        ]
+                        \addplot table[x index=0,y index=2] {sensitytable.txt};
+                        \addplot table[x index=0,y index=1] {sensitytable.txt};
+                        \legend{\small 成本变化下的税前NPV, \small 收益变化下的税前NPV}
+                \end{axis}
+        \end{tikzpicture}
+        \caption{成本与收益变动敏感性比较分析图}
+\end{figure}
