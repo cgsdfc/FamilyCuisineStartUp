@@ -31,9 +31,14 @@
 % Draw special cell with a slash crossing it.
 \usepackage{diagbox}
 
+% These are recommended by pgfplotstable
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
 % Our customized table style specialized for 5 years.
 \input{five-years-table}
-\pgfplotsset{ compat=1.15 }
+% Required by pgfplotstable
+\pgfplotsset{ compat=newest }
 
 % Enable the external feature of pgfplots.
 \usepgfplotslibrary{external}
@@ -43,7 +48,7 @@
 \tikzsetexternalprefix{external/}
 
 % For the sake of development only.
-\includeonly{chapter9}
+\includeonly{appendices}
 \title{北京爱厨艺亲子主题餐厅}
 
 \begin{document}
