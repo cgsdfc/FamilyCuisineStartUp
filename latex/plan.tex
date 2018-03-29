@@ -30,7 +30,7 @@
 \usepackage{multirow}
 % Draw special cell with a slash crossing it.
 \usepackage{diagbox}
-
+\usepackage[cc]{titlepic}
 % These are recommended by pgfplotstable
 \usepackage{booktabs}
 \usepackage{array}
@@ -48,8 +48,8 @@
 \tikzsetexternalprefix{external/}
 
 % For the sake of development only.
-\includeonly{appendices}
 \title{北京爱厨艺亲子主题餐厅}
+\newcounter{rowcount}
 
 \begin{document}
 \maketitle
@@ -59,7 +59,6 @@
 % \listoftables
 
 
-\pagenumbering{arabic}
 \include{chapter1}
 \include{chapter2}
 \include{chapter3}
