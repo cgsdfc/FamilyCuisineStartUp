@@ -1,60 +1,12 @@
-% CTeX Report Class
-\documentclass{ctexrep}
-
-% FIXME the following 2 packages have no reference
-\usepackage{caption}
-\usepackage{subcaption}
-
-% For \eqref mainly, see chapter8 for use of equations.
-\usepackage{amsmath}
-% For future loading tables from files. \pgfplotstableread
-% \pgfplotstabletypeset
-% \includegraphics
-\usepackage{pgfplotstable}
-\usepackage{graphicx}
-% The main ploting engine we use for nearly every chart.
-\usepackage{pgfplots}
-
-% capt-of is used in display of company-logo
-% and caption is the dependency of subcaption which
-% it doesn't load for some reasons
-\usepackage{capt-of}
-
-% Extended enumerate environment with optional marker specifier.
-\usepackage{enumerate}
-% Extended tabular environment.
-\usepackage{array}
-% Draw pie charts based on pgfplots
-\usepackage{pgf-pie}
-% Twine of multicolumn.
-\usepackage{multirow}
-% Draw special cell with a slash crossing it.
-\usepackage{diagbox}
-\usepackage[cc]{titlepic}
-% These are recommended by pgfplotstable
-\usepackage{booktabs}
-\usepackage{array}
-\usepackage{colortbl}
-\usepackage{url}
-\usepackage{tabularx}
-% Our customized table style specialized for 5 years.
-\input{five-years-table}
-% Required by pgfplotstable
-\pgfplotsset{ compat=newest }
-
+\documentclass{fengrucup}
 % Enable the external feature of pgfplots.
 \usepgfplotslibrary{external}
 \tikzexternalize
-% Note the slash after dirname.
-% It is necessary.
 \tikzsetexternalprefix{external/}
 
-% For the sake of development only.
 \title{北京爱厨艺亲子主题餐厅}
 \newcounter{rowcount}
-
-
-\includeonly{chapter9, app-profit}
+\includeonly{chapter1}
 \begin{document}
 \maketitle
 % \pagestyle{frontmatter}
