@@ -1,12 +1,13 @@
+\newcommand{\fiveyearwidth}{6em}
 \newenvironment{fiveYearsTable}[2]
 {%begin
-        \begin{table}[ htbp ]
+        \begin{table}[htbp]
         \caption{#1}
         \label{#2}
         \centering
-        \begin{tabular}{|c|c|c|c|c|c|}
-                \hline \diagbox{时间}{项目} &
-                第 1 年& 第 2 年& 第 3 年& 第 4 年& 第 5 年\\ \hline
+        \begin{tabular}{|>{\centering}m{\fiveyearwidth}|c|c|c|c|c|}
+                \hline \diagbox[innerwidth=\fiveyearwidth]{时间}{项目}  &
+                第 1 年 & 第 2 年 & 第 3 年 & 第 4 年 & 第 5 年\\ \hline
 }%
 {% end
         \end{tabular}
