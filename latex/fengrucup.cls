@@ -1,3 +1,4 @@
+% !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}[2007/10/19]
 \ProvidesClass{fengrucup}
               [2018/04/03 v0.0
@@ -29,6 +30,7 @@
 \RequirePackage{array}
 \RequirePackage{colortbl}
 \RequirePackage{url}
+\RequirePackage{ulem}
 \RequirePackage{tabularx}
 \input{five-years-table}
 \pgfplotsset{ compat=newest }
@@ -77,39 +79,18 @@
     \fancyhf{}
     \fancyfoot[C]{\zihao{5}\roman{\thepage}}
 }
-% \iffalse
-% \fancypagestyle{mainmatter}{
-%     \fancyhead{}
-%     \fancyfoot{}
-%     \ifbuaa@bachelor
-%         \fancyhead[C]{
-%             \includegraphics[width=37bp]{figure/buaamark.eps}\hfill
-%             \raisebox{2ex}{\heiti\zihao{4}\buaa@university 毕业设计(论文)}\hfill
-%             \raisebox{2ex}{\songti\zihao{5}第\quad\thepage\quad 页}
-%         }
-%     \else
-%         \if@twoside
-%             \fancyhead[CO]{\zihao{-5}\songti
-%                 \buaa@university\buaa@headdegree 学位论文\vspace{1.5mm}
-%             }
-%             \fancyhead[CE]{\zihao{-5}\songti\leftmark\vspace{1.5mm}}
-%         \else
-%             \fancyhead[C]{\zihao{-5}\songti
-%                 \ifthenelse{\isodd{\value{page}}}
-%                     {\buaa@university\buaa@headdegree 学位论文}
-%                     {\leftmark}
-%                 \vspace{1.5mm}
-%             }
-%         \fi
-%         \fancyfoot[C]{\zihao{5}\thepage}
-%     \fi
-%     \renewcommand{\headrulewidth}{0.5bp} % 页眉线宽度
-% }
 
-% \fancypagestyle{plain}{
-%     \pagestyle{fancy}
-% }
-% \fi
+\fancypagestyle{mainmatter}{
+    \fancyhead{}
+    \fancyfoot{}
+    \fancyhead[C]{\songti\zihao{-5}\centering
+            \uline{北京航空航天大学第二十八届“冯如杯”学生创业计划竞赛参赛作品}
+    }
+    \renewcommand{\headrulewidth}{0pt}
+}
+\fancypagestyle{plain}{
+        \pagestyle{fancy}
+}
 
 % 汉化
 \renewcommand{\contentsname}{目\qquad 录}
@@ -117,30 +98,46 @@
 \renewcommand{\tablename}{表}
 
 % 格式
+% Format!
+% 章标题:三号,黑体,居中。
+% 节标题:四号,黑体,居左。
+% 条标题:小四号,黑体,居左。
+% 章、节、条三级标题为单倍行距,段前、段后各设为 0.5 行(即前后各空 0.5 行)。
 \ctexset{
         chapter={
-                % 章标题:三号,黑体,居中。
-                format={\centering\zihao{3}\heiti},
-                numbering=true,
+                format={\heiti\zihao{3}\centering},
                 name={},
                 number={\zihao{3}\thechapter},
-                % aftername={\quad},
-                % titleformat={},
-                % beforeskip={-.5\baselineskip},
-                % afterskip={\baselineskip},
+                aftername={\space},
+                beforeskip={\baselineskip},
+                afterskip={\baselineskip},
+                fixskip=true,
+                indent=0pt,
         },
         section={
-            % 节标题:四号,黑体,居左。
-                format={\raggedright\zihao{4}\heiti},
-                aftername={\quad},
-                beforeskip={.5\baselineskip},
-                afterskip={.5\baselineskip},
+                format={\zihao{4}\heiti\raggedright},
+                number={\zihao{4}\thesection},
+                aftername={\space},
+                beforeskip={\baselineskip},
+                afterskip={\baselineskip},
+                fixskip=true,
+                indent=0pt
         },
         subsection={
-            % 条标题:小四号,黑体,居左。
-                format={\zihao{-4}\heiti\raggedright},
-                aftername={\quad},
-                beforeskip={.5\baselineskip},
-                afterskip={.5\baselineskip},
+                format={\heiti\zihao{-4}\raggedright},
+                aftername={\space},
+                number={\zihao{-4}\thesubsection},
+                beforeskip={\baselineskip},
+                afterskip={\baselineskip},
+                fixskip=true,
+                indent=0pt,
+        },
+        paragraph={
+                runin=false,
+        },
+        subparagraph/runin=false,
+        appendix={
+                name={附录},
+                number={\chinese{chapter}},
         },
 }
