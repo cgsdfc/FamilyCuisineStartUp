@@ -1,0 +1,33 @@
+\begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.8\textwidth]{../images/company/risk}
+        \caption{风险系统流程图}
+        \label{fig:risk-sys}
+\end{figure}%
+\begin{figure}[htbp]
+        \centering
+        \begin{tikzpicture}[node distance=2cm]
+                \tikzstyle{plainbox} =  [
+                        draw=black, fill=white, rectangle,
+                minimum height=1cm, minimum width=3cm, text centered]
+                \tikzstyle{arrow} = [thick,->]
+                \tikzstyle{line} = [thick]
+
+                \node [plainbox] (feedback) {风险反馈};
+                \node [plainbox, below of=feedback] (estimate)
+                {风险评估};
+                \node [plainbox, below of=estimate] (analyze) 
+                {风险分析};
+                \node [plainbox, left of=estimate, xshift=-2cm] (confirm) {风险确认};
+                \node [plainbox, right of=estimate, xshift=2cm] (control) {风险控制};
+
+                \draw [arrow] (feedback) -| (confirm);
+                \draw [arrow] (confirm) -- (estimate);
+                \draw [arrow] (estimate) -- (control);
+                \draw [arrow] (control) |- (feedback);
+                \draw [arrow] (confirm) |- (analyze);
+                \draw [arrow] (analyze) -| (control);
+        \end{tikzpicture}
+        \caption{风险分析图}
+        \label{fig:risk-analysis}
+\end{figure}

@@ -1,8 +1,37 @@
-\begin{figure}
-        \begin{tikzpicture}
-                \begin{axis}[ybar]
-                \end{axis}
-        \end{tikzpicture}
+\begin{figure}[htbp]
+\begin{tikzpicture}
+\begin{axis}[
+                ylabel={百分比},
+                xlabel={年份},
+                enlargelimits=0.15,
+                xtick={0,1,2,3,4,5,6},
+                xticklabels={
+                        2014, 2015, 2016, 2017, 2018
+                },
+                legend entries=
+                {总资产报酬率, 净资产收益率},
+                bar width=12pt,
+                ybar,
+                nodes near coords,
+                nodes near coords align={vertical},
+                grid=major,
+                legend style={
+                        at={(0.5, 1.2)},
+                        anchor=north,
+                        legend columns=-1
+                },
+        ]
+        \addplot[fill=blue!25] coordinates {
+                (0, 50) (1, 45) (2, 90) (3, 81) (4, 95)
+        };
+        \addplot[fill=gray] coordinates {
+                (0, 61) (1, 62) (2, 125) (3, 199) (4, 121)
+        };
+\end{axis}
+\end{tikzpicture}
+\centering
+\caption{产品盈利能力预计分析}
+\label{fig:profit}
 \end{figure}
 
 
