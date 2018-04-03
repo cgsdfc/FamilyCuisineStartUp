@@ -36,6 +36,12 @@
 \pgfplotsset{ compat=newest }
 
 
+%%%%%%%%%% external %%%%%%%%%%
+% Enable the external feature of pgfplots.
+% 节约编译时间
+\usepgfplotslibrary{external}
+\tikzexternalize
+
 %%%%%%%%%% font %%%%%%%%%%
 % 数学相关和字体设置
 % 这是英文的字体
@@ -74,19 +80,28 @@
 
 \RequirePackage{fancyhdr}
 \fancypagestyle{frontmatter}{
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\headrulewidth}{0pt}
-    \fancyhf{}
-    \fancyfoot[C]{\zihao{5}\roman{\thepage}}
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\headrulewidth}{0pt}
+        \fancyhf{}
+        \fancyfoot[C]{\zihao{5}\centering\roman{page}}
 }
 
+% Format!
+% 页眉内容为北京航空航天大学第二十七届“冯如杯”学生学术科技作品竞赛参赛作
+% 品,内容居中。
+% 页眉用小五号宋体字,页眉标注从论文主体部分开始(绪论或第一章)。
+
+% 论文页码从“主体部分(绪论、正文、结论)”开始,直至“参考文献、附录”结
+% 束,用五号阿拉伯数字连续编码,页码位于页脚居中。封面、题名页不编页码。 摘要、
+% 目录、图标清单、主要符号表用五号小罗马数字连续编码,页码位于页脚居中。
 \fancypagestyle{mainmatter}{
-    \fancyhead{}
-    \fancyfoot{}
-    \fancyhead[C]{\songti\zihao{-5}\centering
-            \uline{北京航空航天大学第二十八届“冯如杯”学生创业计划竞赛参赛作品}
-    }
-    \renewcommand{\headrulewidth}{0pt}
+        \fancyhead{}
+        \fancyfoot{}
+        \fancyhead[C]{\songti\zihao{-5}\centering
+                \uline{北京航空航天大学第二十八届“冯如杯”学生创业计划竞赛参赛作品}
+        }
+        \fancyfoot[C]{\zihao{5}\thepage}
+        \renewcommand{\headrulewidth}{0pt}
 }
 \fancypagestyle{plain}{
         \pagestyle{fancy}
@@ -134,8 +149,16 @@
         },
         paragraph={
                 runin=false,
+                format={\heiti\normalsize},
+                beforeskip=0pt,
+                afterskip=0pt,
+                number=\theparagraph,
         },
-        subparagraph/runin=false,
+        subparagraph={
+                format={\songti\normalsize},
+                beforeskip=0pt,
+                afterskip=0pt,
+        },
         appendix={
                 name={附录},
                 number={\chinese{chapter}},

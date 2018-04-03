@@ -1,55 +1,26 @@
-% See this for useful pointers:
-% https://en.wikibooks.org/wiki/LaTeX/Tables
-
-% The package makecell offers a macro for making
-% cells of multiple line in a tabular environment
-% inside which \\ can be used.
-
-% This is the first solution I tried, but later replaced it
-% with more primary solution. See below.
-
-% Instead of manually breaking lines, we use makecell
-% to make each cell with long text line a paragraph.
-
-% The reason I didn't use |p{}|p{}|p{}| is _only_ those
-% cells with lone lines need to be in paragraphs and makecell
-% allows to format each of those cells rather than selecting
-% a whole column (|c|c|c| is called column specifier). 
-
-% However, the m{} solution make the code look short.
-% Using the array package, we can use p{} for paragraph towards the top
-% m{} for paragraph towards the middle and b{} for paragraph towards the bottom.
-% We can also use >{decl} and <{decl} to insert decl before and after column specifier.
-% Here I want those paragraphs to be both horizental and vertical centered, so the m{}
-% and >{\centering}.
-
-% The width of the paragraph in each cell is 1/3 of the \textwidth since we have 3 columns
-% in total.
-% Note here: since we are using >{decl} construct in the last column, we should use \tabularnewline in place of
-% \\ or LaTeX will say "Misplaced \noaligned"!
 \begin{table}[ htbp ]
 \caption{潜在进入者}
         \label{fig:competitor}
         \centering
-        \begin{tabular} {| >{\centering}m{0.3\textwidth} | >{\centering}m{0.3\textwidth} | >{\centering}m{0.3\textwidth} |}
-\hline
-公司名称        &       地址            &                菜系或特色\tabularnewline
-\hline
+        \begin{tabular} {| *{3}{>{\centering}m{0.3\textwidth} |}}
+                \hline
+                公司名称 & 地址 & 菜系或特色\tabularnewline
+                \hline
                 北京麦幼优儿童主题餐厅 
-                &海淀区北三环西路23号中坤广场D座3楼(近大钟寺地铁站)
-                &西餐、甜品饮品、休闲家庭套 餐为主\tabularnewline
-\hline
+                 & 海淀区北三环西路23号中坤广场D座3楼(近大钟寺地铁站)
+                 & 西餐、甜品饮品、休闲家庭套 餐为主\tabularnewline
+                \hline
                 上海芭迪熊儿童主题餐厅 
-                &长宁区长宁路1018号龙之梦购物中心
-                &蘑菇房餐厅\tabularnewline
-                
-\hline
+                 & 长宁区长宁路1018号龙之梦购物中心
+                 & 蘑菇房餐厅\tabularnewline
+
+                \hline
                 广州熊猫餐厅
-                &广州番禺迎宾路
-                &餐厅共有 600 多个餐位,提供川菜、广东本地美食,
+                 & 广州番禺迎宾路
+                 & 餐厅共有 600 多个餐位,提供川菜、广东本地美食,
                 还有日本以及越南、新加坡、泰国等东南亚美食,味道地道正宗。\tabularnewline
-\hline
-\end{tabular}
+                \hline
+        \end{tabular}
 \end{table}
 
 
